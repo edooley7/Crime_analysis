@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+   <head>
+        <title>Correct vs. Incorrect classification</title>
+    </head>
 <style>
 
 body {
-  font: 10px sans-serif;
+  font: 12px sans-serif;
+  fill: #C5C3C6;
+  background: black;
 }
 
 .axis path,
 .axis line {
-  fill: none;
-  stroke: #000;
+  fill: None;
+  stroke: #C5C3C6;
   shape-rendering: crispEdges;
 }
 
@@ -26,7 +31,7 @@ body {
 }
 
 .x.axis path {
-  display: none;
+  display: #C5C3C6;
 }
 
 </style>
@@ -47,7 +52,7 @@ var y = d3.scale.linear()
     .range([height, 0]);
 
 var color = d3.scale.ordinal()
-    .range(["#086788", "#dd1c1a", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    .range(["#5BC0EB", "#E55934", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
 var xAxis = d3.svg.axis()
     .scale(x0)
@@ -56,7 +61,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .tickFormat(d3.format(",.1%"));
+    .tickFormat(d3.format(",.0%"));
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
